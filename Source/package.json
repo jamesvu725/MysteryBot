@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "start": "node bot.js"
+  },
   "name": "MysteryBot",
   "version": "1.0.0",
   "description": "Random Discord Bot",
