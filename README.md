@@ -4,6 +4,8 @@ This is a Discord bot created by mystery372.
 
 MysteryBot is a Discord application. It is a Bot user account that can be added to a Discord server. It is written in JavaScript. Discord.js is the main library. It uses Node.js to run.
 
+Link to add bot to server: https://discordapp.com/api/oauth2/authorize?client_id=574693516987334676&permissions=76800&scope=bot
+
 ## Requirements
 1. You need a Discord account to use MapleBot if you don't have one, you can create an account at https://discordapp.com/
 2. You need to have Node.js installed. You can download Node.js at https://nodejs.org/en/
