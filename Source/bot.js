@@ -23,7 +23,7 @@ client.on('message', msg => {
           color: 0x0099ff,
           title: 'MysteryBot Help',
           thumbnail: {
-		         url: 'https://66.media.tumblr.com/c4f802f428a3dd0908ee7cf4d681fa72/tumblr_oa0xd8aIwW1rzaqg4o1_400.jpg',
+		         url: 'https://raw.githubusercontent.com/jamesvu725/MysteryBot/master/Source/img/pink_bean.jpg',
 	        },
           fields: [
             {
@@ -46,6 +46,31 @@ client.on('message', msg => {
           let diff = Math.abs(msg.createdTimestamp - start);
           msg.edit(`MysteryBot responded in *${diff/1000} seconds*`);
         }).catch((error) => console.log(error));
+        break;
+
+      case 'tetris':
+        let choice = Math.floor(Math.random() * 7);
+        const tetrisMessage = {
+          color: 0x0099ff,
+          title: 'MysteryBot Random Tetris',
+          thumbnail: {
+		         url: 'https://raw.githubusercontent.com/jamesvu725/MysteryBot/master/Source/img/pink_bean.jpg',
+	        },
+          description: 'You got a block!',
+        };
+
+        switch (choice) {
+          case '0':
+            tetrisMessage.description = 'You got an I block!';
+            tetrisMessage.thumbnail = 'https://raw.githubusercontent.com/jamesvu725/MysteryBot/master/Source/img/tetris_i.jpg?token=AISPPMH7OTKIKQXO2EYINXC6MCJKU';
+            break;
+
+          default:
+            tetrisMessage.description = 'You got an I block!';
+            tetrisMessage.thumbnail = 'https://raw.githubusercontent.com/jamesvu725/MysteryBot/master/Source/img/tetris_i.jpg?token=AISPPMH7OTKIKQXO2EYINXC6MCJKU';
+        }
+
+        msg.channel.send({embed: tetrisMessage});
         break;
 
       // Default does nothing if command is incorrect
