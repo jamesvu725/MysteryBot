@@ -1,0 +1,15 @@
+{
+  "name": "MysteryBot",
+  "version": "1.0.0",
+  "description": "Random Discord Bot",
+  "main": "bot.js",
+  "author": "mystery372",
+  "dependencies": {
+    "discord.js": "^12.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jamesvu725/MysteryBot.git"
+  },
+  "license": "MIT"
+}
