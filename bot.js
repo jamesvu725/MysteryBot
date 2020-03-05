@@ -1,5 +1,5 @@
 // check for required files
-const Discord = require('../Libs/node_modules/discord.js');
+const Discord = require('./Libs/node_modules/discord.js');
 const auth = require('./auth.json');
 // Create the client
 const client = new Discord.Client();
