@@ -34,6 +34,10 @@ client.on('message', msg => {
               name: '?ping',
               value: 'Returns the ping from server',
             },
+            {
+              name: '?tetris',
+              value: 'Returns a random tetris block (I, L, J, O, S, T, Z).',
+            },
           ],
         };
         msg.channel.send({embed: helpMessage});
@@ -50,29 +54,60 @@ client.on('message', msg => {
 
       case 'tetris':
         let choice = Math.floor(Math.random() * 7);
-        const tetrisMessage = {
+        let tetrisMessage = {
           color: 0x0099ff,
           title: 'MysteryBot Random Tetris',
           thumbnail: {
 		         url: 'https://raw.githubusercontent.com/jamesvu725/MysteryBot/master/Source/img/pink_bean.jpg',
 	        },
           description: 'You got a block!',
+          image: {
+            url: 'https://raw.githubusercontent.com/jamesvu725/MysteryBot/master/Source/img/pink_bean.jpg',
+          },
         };
 
         switch (choice) {
-          case '0':
+          case 0:
             tetrisMessage.description = 'You got an I block!';
-            tetrisMessage.thumbnail = 'https://raw.githubusercontent.com/jamesvu725/MysteryBot/master/Source/img/tetris_i.jpg?token=AISPPMH7OTKIKQXO2EYINXC6MCJKU';
+            tetrisMessage.image.url = 'https://raw.githubusercontent.com/jamesvu725/MysteryBot/master/Source/img/tetris_I.jpg';
+            break;
+
+          case 1:
+            tetrisMessage.description = 'You got a J block!';
+            tetrisMessage.image.url = 'https://raw.githubusercontent.com/jamesvu725/MysteryBot/master/Source/img/tetris_j.jpg';
+            break;
+
+          case 2:
+            tetrisMessage.description = 'You got a L block!';
+            tetrisMessage.image.url = 'https://raw.githubusercontent.com/jamesvu725/MysteryBot/master/Source/img/tetris_l.jpg';
+            break;
+
+          case 3:
+            tetrisMessage.description = 'You got an O block!';
+            tetrisMessage.image.url = 'https://raw.githubusercontent.com/jamesvu725/MysteryBot/master/Source/img/tetris_o.jpg';
+            break;
+
+          case 4:
+            tetrisMessage.description = 'You got a S block!';
+            tetrisMessage.image.url = 'https://raw.githubusercontent.com/jamesvu725/MysteryBot/master/Source/img/tetris_s.jpg';
+            break;
+
+          case 5:
+            tetrisMessage.description = 'You got a T block!';
+            tetrisMessage.image.url = 'https://raw.githubusercontent.com/jamesvu725/MysteryBot/master/Source/img/tetris_t.jpg';
+            break;
+
+          case 6:
+            tetrisMessage.description = 'You got a Z block!';
+            tetrisMessage.image.url = 'https://raw.githubusercontent.com/jamesvu725/MysteryBot/master/Source/img/tetris_z.jpg';
             break;
 
           default:
-            tetrisMessage.description = 'You got an I block!';
-            tetrisMessage.thumbnail = 'https://raw.githubusercontent.com/jamesvu725/MysteryBot/master/Source/img/tetris_i.jpg?token=AISPPMH7OTKIKQXO2EYINXC6MCJKU';
+            tetrisMessage.description = 'You got no blocks!';
+            tetrisMessage.image.url = 'https://raw.githubusercontent.com/jamesvu725/MysteryBot/master/Source/img/pink_bean.jpg';
         }
-
         msg.channel.send({embed: tetrisMessage});
         break;
-
       // Default does nothing if command is incorrect
       default:
         break;
