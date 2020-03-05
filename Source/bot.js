@@ -19,13 +19,24 @@ client.on('message', msg => {
     switch (cmd) {
             // Returns the help page
       case 'help':
-        msg.channel.send(`
-\`\`\`css
-[MysteryBot help page]
-!help               Displays this help page
-!ping               Returns the ping
-\`\`\`
-`);
+        const helpMessage = {
+          color: 0x0099ff,
+          title: 'MysteryBot Help',
+          thumbnail: {
+		         url: 'https://66.media.tumblr.com/c4f802f428a3dd0908ee7cf4d681fa72/tumblr_oa0xd8aIwW1rzaqg4o1_400.jpg',
+	        },
+          fields: [
+            {
+              name: '?help',
+              value: 'Displays this help page',
+            },
+            {
+              name: '?ping',
+              value: 'Returns the ping from server',
+            },
+          ],
+        };
+        msg.channel.send({embed: helpMessage});
         break;
 
       // Returns the ping
