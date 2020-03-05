@@ -117,4 +117,4 @@ client.on('message', msg => {
 
 
 // Bot login
-client.login(auth.token);
+client.login(process.env.TOKENID);
