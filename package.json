@@ -1,9 +1,9 @@
 {
-  "engines": {
-    "node": "12.16.1",
-  },
   "scripts": {
     "start": "node bot.js"
+  },
+  "engines": {
+    "node": "12.16.1",
   },
   "name": "MysteryBot",
   "version": "1.0.0",
